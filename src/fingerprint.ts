@@ -1,3 +1,4 @@
+// Original file: https://github.com/ericelliott/cuid/blob/master/lib/fingerprint.js
 import os from "os";
 
 import { pad } from "./pad";

@@ -1,3 +1,4 @@
+// Original file: https://github.com/ericelliott/cuid/blob/master/lib/getRandomValue.js
 import crypto from "crypto";
 
 const lim = Math.pow(2, 32) - 1;
