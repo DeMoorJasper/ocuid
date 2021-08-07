@@ -7,6 +7,14 @@ test("Should be able to generate 1000 valid ocuids", () => {
   }
 });
 
+test("Should generate unique ocuids", () => {
+  let generatedIds = new Set();
+  for (let i = 0; i < 10_000; i++) {
+    const generatedOcuid = ocuid();
+    expect(generatedIds.has(generatedOcuid)).toBe(false);
+  }
+});
+
 test("Should be able to extract timestamp from ocuids", () => {
   for (let i = 0; i < 250; i++) {
     const generatedOcuid = ocuid();

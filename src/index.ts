@@ -22,9 +22,9 @@ function randomBlock(): string {
 }
 
 export function ocuid(): string {
-  const timeHash = pad(Math.floor(Date.now() / 1000).toString(16), 8);
+  const timeHex = pad(Math.floor(Date.now() / 1000).toString(16), 8);
   const count = pad(safeCounter().toString(BASE), BLOCK_SIZE);
-  return `${timeHash}${count}${fingerprint()}${randomBlock()}${randomBlock()}`;
+  return `${timeHex}${count}${fingerprint()}${randomBlock()}${randomBlock()}`;
 }
 
 export function isValid(input: string): boolean {

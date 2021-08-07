@@ -1,10 +1,17 @@
-# OCUID, a somewhat objectid compatible version of cuid
+# ocuid, an objectid compatible version of cuid
 
-`ocuid` is a fork of `cuid` with the main difference that it starts with the same timestamp format `ObjectId` uses, to ease migrations from ObjectId into cuid's without the need to rewrite all id's to still have the sortability of ids.
+`ocuid` is a fork of `cuid` which is compatible with the ObjectId character space and also starts with the same timestamp format, everything following the timestamp is the same as a cuid with the main difference that the character space is smaller.
 
-Unless you're migrating from ObjectId's you probably want to have a [cuid](https://github.com/ericelliott/cuid) instead.
+## When to not use this library
 
-## Using the library
+You don't have a need to keep using the same format as ObjectId, in this case simply use [cuid](https://github.com/ericelliott/cuid) instead. It has way better cross-language support, is battle-tested and has a large community.
+
+## When you could use this library
+
+- You're migrating away from mongodb, but want to use a more collision-resistant id that is still compatible with your existing ObjectId's to ensure the order remains correct
+- You want to generate an ObjectId without importing a huge library, disclaimer: this library doesn't 100% match the ObjectId specification (on purpose) but it should still be valid
+
+## How to use this library
 
 ```js
 import { ocuid, isValid, getTimestampFromId } from "ocuid";
