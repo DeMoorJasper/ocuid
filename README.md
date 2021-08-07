@@ -12,7 +12,7 @@ import { ocuid, isValid, getTimestampFromId } from "ocuid";
 // Generate a ocuid
 const id = ocuid();
 
-// Check validity or ocuid or ObjectId, ocuids are less strict as they use a wider character space
+// Check validity of ocuid or ObjectId
 const isValidId = isValid(id);
 
 // Get the timestamp (amount of ms since epoch) from an ocuid or ObjectId

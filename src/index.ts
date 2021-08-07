@@ -2,7 +2,7 @@ import { fingerprint } from "./fingerprint";
 import { pad } from "./pad";
 import { random } from "./random";
 
-const BASE = 36;
+const BASE = 16;
 const BLOCK_SIZE = 4;
 const DISCRETE_VALUES = Math.pow(BASE, BLOCK_SIZE);
 let c = 0;
@@ -28,5 +28,5 @@ export function ocuid(): string {
 }
 
 export function isValid(input: string): boolean {
-  return !!(typeof input === "string" && input.match(/[0-9a-z]{24}/i));
+  return !!(typeof input === "string" && input.match(/[0-9a-f]{24}/i));
 }
